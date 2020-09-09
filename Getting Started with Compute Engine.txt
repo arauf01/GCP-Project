@@ -1,4 +1,5 @@
 GETTING STARTED WITH COMPUTE ENGINE
+Note: Press enter after typing each batch of code.
 
 TASK 1: 
 Sign in into GCP Qwiklabs using provided credentials
@@ -40,4 +41,7 @@ To Confirm that the changes you made are updated on the server, type
 curl http://localhost/
 
 To exit ssh from my-vm-1 type
+exit
+
+To exit from ssh on my-vm-2, type
 exit
