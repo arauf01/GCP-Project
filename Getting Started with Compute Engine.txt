@@ -45,3 +45,4 @@ exit
 
 To exit from ssh on my-vm-2, type
 exit
+.
