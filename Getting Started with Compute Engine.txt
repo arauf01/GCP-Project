@@ -2,7 +2,11 @@ GETTING STARTED WITH COMPUTE ENGINE
 Note: Press enter after typing each batch of code.
 
 TASK 1: 
-Sign in into GCP Qwiklabs using provided credentials
+On Cloud shell, run the following commands
+gcloud projects create myproject01789
+
+To change the directory to created project, run
+gcloud config set myproject01789
 
 TASK 2:
 Creating 'my-vm-1' virtual machine in us-central1-b zone using gcloud command line
