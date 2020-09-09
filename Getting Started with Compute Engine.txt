@@ -1,0 +1,43 @@
+GETTING STARTED WITH COMPUTE ENGINE
+
+TASK 1: 
+Sign in into GCP Qwiklabs using provided credentials
+
+TASK 2:
+Creating 'my-vm-1' virtual machine in us-central1-b zone using gcloud command line
+
+gcloud compute instances create "my-vm-1" \
+--machine-type "n1-standard-1" \
+--image-project "debian-cloud" \
+--image "debian-9-stretch-v20190213" \
+--subnet "default"
+
+TASK 3:
+Creating 'my-vm-2' virtual machine in us-central1-b zone using gcloud command line
+
+gcloud compute instances create "my-vm-2" \
+--machine-type "n1-standard-1" \
+--image-project "debian-cloud" \
+--image "debian-9-stretch-v20190213" \
+--subnet "default"
+
+TASK 4: 
+Checking connectivity between VMs (on 'my-vm-2' using ssh) type
+ping my-vm-1
+
+Connecting to my-vm-1 from my-vm-2 using ssh
+ssh my-vm-1
+
+To Installing Nginx web server on my-vm-1, type
+sudo apt-get install nginx-light -y
+
+To Edit the home page of the web server, type
+sudo nano /var/www/html/index.nginx-debian.html
+
+Press Ctrl+O to save after edditing and Ctrl+X to exit
+
+To Confirm that the changes you made are updated on the server, type
+curl http://localhost/
+
+To exit ssh from my-vm-1 type
+exit
