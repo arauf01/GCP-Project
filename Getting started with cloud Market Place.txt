@@ -1,0 +1,59 @@
+GETTING STARTED WITH CLOUD MARKET PLACE
+
+SIGN IN INTO GCP CONSOLE
+TASK 1:
+On Cloud shell, run the following commands
+gcloud projects create myproject01789
+
+To change the directory to created project, run
+gcloud config set myproject01789
+
+
+TASK 2:
+To deploy LAMP server, we will first of all create a VM using cloud shell.
+To create a vm, run the code below on cloud shell.
+
+gcloud compute instances create "lamp-server-vm" \
+--machine-type "n1-standard-1" \
+--image-project "debian-cloud" \
+--image "debian-9-stretch-v20190213" \
+--subnet "default"
+
+To Deploy Lamp on the lamp-server-vm, run the following command on (lamp-server SSH),
+sudo apt-get update
+sudo apt-get install apache2 php libapache2-mod-php5
+
+
+Starting the apache server on lamp-server-vm, run
+sudo service httpd start
+
+
+Installing MySQL on the lamp-server-vm, run
+sudo apt-get install mysql-server php-mysql php-pear
+
+
+Using phpMyAdmin as database administration tool, run
+sudo apt-get install phpmyadmin
+
+TASK 3:
+verify your deployment.
+
+In SSH windows run the following code to change directory,
+cd /opt/bitnami
+
+To copy the phpinfo.php script from the installation directory to a publicly 
+accessible location under the web server document root, run the command below
+
+sudo sh -c 'echo "<?php phpinfo(); ?>" > apache2/htdocs/phpinfo.php'
+
+Type ifconfig and press enter, note down your external ip address
+
+To exit from the SSH windows, type
+exit
+
+To test your PHP site, open a new tab on your browser, type the following link in the address bar
+
+http://EXTERNAL_IP-ADDRESS/phpinfo.php
+
+replace EXTERNAL_IP-ADDRESS with your external ip
+
